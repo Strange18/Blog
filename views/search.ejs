@@ -1,0 +1,5 @@
+<h1>You searched for <%= searched_query %></h1>
+
+<% data.forEach(element => { %>
+<a href="/post/<%= element._id %>"><%= element.title %></a> <br />
+<% }) %>
