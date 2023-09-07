@@ -1,5 +1,10 @@
+// to load environment variables from .env file 
 require('dotenv').config()
+
+// for express server
 const express = require("express");
+
+//for creating a single layout and placing all components over it 
 const expressLayout = require("express-ejs-layouts")
 
 const app = express();
@@ -15,7 +20,7 @@ app.set('layout', './layouts/main')
 app.set('view engine', 'ejs')
 
 
-//connecting the database
+// connecting the database
 const connectdb = require('./server/config/db')
 
 connectdb();
@@ -24,7 +29,7 @@ connectdb();
 
 app.use('/', require('./server/routes/main_routes.js'))
 
-
+// starting the server
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)
 })

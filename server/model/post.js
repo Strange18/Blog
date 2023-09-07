@@ -1,6 +1,12 @@
+// this file contains the simple schema for the table named Post
 const mongoose = require('mongoose')
 
+
 const Schema = mongoose.Schema;
+
+
+// creating instance of mongoose.Schema
+// defing the schema
 const PostSchema = new Schema({
     title: {
         type: String,

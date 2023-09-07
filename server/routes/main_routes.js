@@ -1,8 +1,15 @@
+//this file contains the routes
 const express = require('express');
 const router = express.Router();
+
+// for the schema 
 const post = require('../model/post');
+
+//render function helps in sending the html file
 const { render } = require('express/lib/response');
 
+
+// a simple route or home page that fetches data from the databases
 router.get('', async (req, res) => {
     try {
         const data = await post.find();
@@ -15,6 +22,7 @@ router.get('', async (req, res) => {
 
 })
 
+//route to view each individual pages
 router.get('/post/', async (req, res) => {
     try {
         const data = await post.findById()
@@ -25,8 +33,11 @@ router.get('/post/', async (req, res) => {
 
 })
 
+
+// route to go to about page
 router.get('/about', (req, res) => {
 
+    //renders the content of about present in views
     res.render('about');
 })
 
