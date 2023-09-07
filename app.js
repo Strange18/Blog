@@ -13,6 +13,8 @@ const MongoStore = require("connect-mongo");
 
 const session = require("express-session");
 
+const methodOverride = require("method-override");
+
 const app = express();
 const port = 5000;
 
@@ -39,6 +41,7 @@ app.use(express.static("public"));
 app.use(expressLayout);
 app.set("layout", "./layouts/main");
 app.set("view engine", "ejs");
+app.use(methodOverride("_method"));
 
 // connecting the database
 const connectdb = require("./server/config/db");
