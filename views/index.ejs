@@ -1,32 +1,34 @@
 <div class="author">
-    <h1 class="author__heading">Hi I am Mandy</h1>
-    <p class="author__body">Lorem ipsum dolor sit amsimus perferendis corrupti delectus!</p>
+  <h1 class="author__heading">Welcome to Blog</h1>
+  <p class="author__body">
+    Lorem ipsum dolor sit amsimus perferendis corrupti delectus!
+  </p>
 </div>
 
-<img src="/images/hero-image.webp" alt="a person" class="hero-image" width="902" height='123'>
-
+<img
+  src="/images/hero-image.webp"
+  alt="a person"
+  class="hero-image"
+  width="902"
+  height="123"
+/>
 
 <section class="articles">
+  <h2 class="article__heading">Latest Post</h2>
 
-    <h2 class="" article__heading> Latest Post</h2>
-
-    <ul class="articles-ul">
-
-        <% data.forEach(post=> { %>
-            <li>
-                <a href="/post/<%= post._id %>">
-                    <span>
-                        <%= post.title %>
-                    </span>
-                    <br>
-                    <span class="articel-list__date">
-                        <%= post.createdAt.toDateString() %>
-                    </span>
-                </a>
-            </li>
-            <hr>
-            <% }) %>
-
-    </ul>
-    <a href="#" class="pagination">&lt; View Older Post</a>
+  <ul class="articles-ul">
+    <% data.forEach(post=> { %>
+    <li>
+      <a href="/post/<%= post._id %>">
+        <span> <%= post.title %> </span>
+        <br />
+        <span class="articel-list__date">
+          <%= post.createdAt.toDateString() %>
+        </span>
+      </a>
+    </li>
+    <hr />
+    <% }) %>
+  </ul>
+  <a href="#" class="pagination">&lt; View Older Post</a>
 </section>
